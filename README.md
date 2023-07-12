@@ -34,7 +34,7 @@ methods under four different data partitioning protocols.
 
 - **We propose a weighted uncertainty sample selection method for active learning of instance segmentation. This method alleviates the imbalance of categories in the dataset and the imbalance of the number of objects contained in a single image and achieves the best performance of instance segmentation with the minimum label cost .** 
 
-![image](./img/Fig2.pdf)
+![image](./img/pipeline.png)
 
 ## Usage
 
