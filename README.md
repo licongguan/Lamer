@@ -78,7 +78,7 @@ Symlink the required dataset
 
 - We provide relevant scripts in `Lamer/mmwcac`.
 
-### Train SOLO
+### Train Lamer
 
 ```shell
 # Train with single GPU
@@ -88,7 +88,7 @@ python tools/train.py ${CONFIG_FILE}
 python tools/train.py configs/solo/solo_r50_fpn_8gpu_1x.py
 ```
 
-### Testing SOLO
+### Testing Lamer
 
 ```shell
 # single-gpu testing
