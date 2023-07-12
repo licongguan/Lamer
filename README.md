@@ -74,7 +74,7 @@ Symlink the required dataset
 - We provide relevant scripts in `Lamer/mmautoeval`.
 
 
-### Label-Free Model Evaluation
+### Weighted Uncertainty Sample Selection
 
 - We provide relevant scripts in `Lamer/mmwcac`.
 

@@ -131,14 +131,14 @@ def collect_results(result_part, size, tmpdir=None):
 def parse_args(group):
     parser = argparse.ArgumentParser(description='MMDet test detector')
     parser.add_argument('--config',
-                        default='/media/glc/Elements/project/SOLO/MyTrain/ALSOLO/Public-cityspace/{}_AL/solov2_Public_cityspace_{}_AL.py'.format(
+                        default='../MyTrain/ModelEval/Public-cityspace/{}_AL/solov2_Public_cityspace_{}_AL.py'.format(
                             group, group), help='test config file path')
-    parser.add_argument('--checkpoint', default='/media/glc/Elements/DATA/ALSOLO/Public-cityspace/01_AL/work_dirs/latest.pth', help='checkpoint file')
+    parser.add_argument('--checkpoint', default='./MyTrain/ModelEval/Public-cityspace/01_AL/work_dirs/latest.pth', help='checkpoint file')
     parser.add_argument('--out',
-                        default='/media/glc/Elements/DATA/ALSOLO/Public-cityspace_test_FD_AP/{}_AL/out/results_solov2_Public-cityspace_{}_AL.pkl'.format(
+                        default='../MyTrain/ModelEval/Public-cityspace_test_FD_AP/{}_AL/out/results_solov2_Public-cityspace_{}_AL.pkl'.format(
                             group, group), help='output result file')
-    if not os.path.exists('/media/glc/Elements/DATA/ALSOLO/Public-cityspace_test_FD_AP/{}_AL/out/'.format(group)):
-        os.makedirs('/media/glc/Elements/DATA/ALSOLO/Public-cityspace_test_FD_AP/{}_AL/out/'.format(group))
+    if not os.path.exists('../MyTrain/ModelEval/Public-cityspace_test_FD_AP/{}_AL/out/'.format(group)):
+        os.makedirs('../MyTrain/ModelEval/Public-cityspace_test_FD_AP/{}_AL/out/'.format(group))
     parser.add_argument(
         '--json_out',
         help='output result file name without extension',

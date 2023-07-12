@@ -10,8 +10,8 @@ from mmautoeval.cal_map import main_map
 
 
 def main_fd_solo(path, spec_label):
-    config = '/media/glc/Elements/project/SOLO/MyTrain/ALSOLO/Public-cityspace/01_AL/solov2_Public_cityspace_01_AL.py'
-    checkpoint = '/media/glc/Elements/DATA/ALSOLO/Public-cityspace/01_AL/work_dirs/latest.pth'
+    config = '../MyTrain/ModelEval/Public-cityspace/01_AL/solov2_Public_cityspace_01_AL.py'
+    checkpoint = '../MyTrain/ModelEval/Public-cityspace/01_AL/work_dirs/latest.pth'
     cuda_device = 'cuda:0'
     dims = 2048
     img_resize_shape = (64, 32)
@@ -192,8 +192,8 @@ def calculate_frechet_distance(mu1, sigma1, mu2, sigma2, eps=1e-6):
 if __name__ == '__main__':
     for i in range(36):
         group = '0{}'.format(i + 1)
-        path_1 = '/media/glc/Elements/DATA/ALSOLO/Public-cityspace/01_AL/FD/aachen/'
-        path_2 = '/media/glc/Elements/DATA/ALSOLO/Public-cityspace/{}_AL/FD/'.format(group)
+        path_1 = '../MyTrain/ModelEval/Public-cityspace/01_AL/01_AL/FD/aachen/'
+        path_2 = '../MyTrain/ModelEval/Public-cityspace/{}_AL/FD/'.format(group)
         for item in os.listdir(path_2):
             path_2 = path_2 + item + "/"
         path = [path_1, path_2]

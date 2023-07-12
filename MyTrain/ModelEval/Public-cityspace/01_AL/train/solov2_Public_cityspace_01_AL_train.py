@@ -64,7 +64,7 @@ test_cfg = dict(
     max_per_img=100)
 # dataset settings
 dataset_type = 'CocoDataset'
-data_root = '/media/glc/Elements/DATA/ALSOLO/Public-cityspace/01_AL/backup/coco/'
+data_root = '../MyTrain/ALSOLO/Public-cityspace/01_AL/backup/coco/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -138,7 +138,7 @@ total_epochs = 36
 device_ids = range(8)
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = '/media/glc/Elements/DATA/ALSOLO/Public-cityspace/01_AL/work_dirs/'
+work_dir = '../MyTrain/ALSOLO/Public-cityspace/01_AL/work_dirs/'
 load_from = None
 resume_from = None  # 恢复训练模型的路径，None表示不进行训练模型的恢复
 workflow = [('train', 1)]

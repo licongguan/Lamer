@@ -36,7 +36,6 @@ def get_coco_json(train2017_path, instance2017_path, annotations_path):
         image_name = image_filename.split('.')[0]
         image_path = os.path.join(train2017_path, image_filename)
         image = Image.open(image_path)
-        # 调用外部函数
         image_info = create_image_info(image_id, os.path.basename(image_filename), image.size)
         coco_output["images"].append(image_info)
         annotation_sub_path = os.path.join(instance2017_path, image_name)
@@ -70,7 +69,6 @@ def get_coco_json(train2017_path, instance2017_path, annotations_path):
                 else:
                     print('illegal class id')
                 category_info = {'id': class_id, 'is_crowd': 'crowd' in image_filename}
-                # 获取mask轮廓
                 binary_mask = np.asarray(Image.open(annotation_path).convert('1')).astype(np.uint8)
 
                 annotation_info = create_annotation_info(
@@ -88,7 +86,7 @@ def get_coco_json(train2017_path, instance2017_path, annotations_path):
     with open(osp.join(annotations_path, "instances_train2017.json"), 'w') as output_json_file:
         json.dump(coco_output, output_json_file)
 
-    print("各类别数量:")
+    print("Quantity of each category:")
     print("person: {}, rider: {}, car: {}, truck: {}, bus: {}, train: {}, motorcycle: {}, bicycle: {}".format(person, rider, car, truck, bus, train, motorcycle, bicycle))
 
     with open(osp.join(random_coco_path, "train_num.txt"), 'w') as f:
@@ -171,7 +169,6 @@ def coco_table():
 
 
 if __name__ == '__main__':
-    # 把两次标注的数据放到一起
     for i in os.listdir(init_labeled_img):  # init imgs
         copyfile(init_labeled_img + i, random_train2017_path + i)
     for i in os.listdir(imgs_path):  # labeled imgs
@@ -182,5 +179,5 @@ if __name__ == '__main__':
     for i in os.listdir(instances_path):  # labeled instances
         copytree(instances_path + i, random_instance2017_path + i)
 
-    # 生成coco json
+    # get coco json
     get_coco_json(random_train2017_path, random_instance2017_path, random_annotations_path)

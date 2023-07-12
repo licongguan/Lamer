@@ -13,7 +13,7 @@ def get_info():
         try:
             copyfile(osp.join(solo_det_path, "al_info", txt_name), random_AnnCost_path + txt_name)
         except:
-            print("{}没有检测到实例".format(i))
+            print("{}No instances detected".format(i))
 
 
 def cal_random_AnnCost():
@@ -38,12 +38,12 @@ def cal_random_AnnCost():
             line = line.strip("()")
             f1.write(line + '\n')
     f1.close()
-    print("完成随机选择的样本点击次数排序")
+    print("Sort the number of clicks on randomly selected samples")
 
     with open(os.path.join(save_random_all_AnnCost_path), 'w') as f2:
-        f2.write("图片个数：{}, 总点击次数：{}".format(img_nums, all_AnnCost_num))
+        f2.write("Number of images：{}, Total clicks：{}".format(img_nums, all_AnnCost_num))
     f2.close()
-    print("完成随机选择的样本总点击次数")
+    print("Total number of clicks to complete random selection of samples")
 
 
 def cal_AnnCost_img(txt, txt_path):

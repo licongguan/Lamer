@@ -20,8 +20,8 @@ if __name__ == '__main__':
     # clear txt
     # base_path = '/media/glc/Elements/DATA/ALSOLO/Public-cityspace/'
     # 测试集
-    base_path = '/media/glc/Elements/DATA/ALSOLO/Public-cityspace_add/FD-aa/'
-    path = ['/media/glc/Elements/DATA/ALSOLO/Public-cityspace/01_AL/FD/aachen/']
+    base_path = '../MyTrain/ModelEval/Public-cityspace_add/FD-aa/'
+    path = ['../MyTrain/ModelEval/Public-cityspace/01_AL/FD/aachen/']
     exclude_list = ['1']
     for i in os.listdir(base_path):
         if i not in exclude_list:

@@ -64,7 +64,7 @@ test_cfg = dict(
     max_per_img=100)
 # dataset settings
 dataset_type = 'CocoDataset'
-data_root = '/media/glc/Elements/DATA/ALSOLO/experiments/cityscapes/186/suponly/coco/'
+data_root = '../MyTrain/ALSOLO/experiments/cityscapes/186/suponly/coco/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -138,7 +138,7 @@ total_epochs = 144  # 13
 device_ids = range(8)
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = '/media/glc/Elements/DATA/ALSOLO/experiments/cityscapes/186/suponly/work_dirs/'
+work_dir = '../MyTrain/ALSOLO/experiments/cityscapes/186/suponly/work_dirs/'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]

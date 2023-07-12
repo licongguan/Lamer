@@ -131,8 +131,8 @@ def collect_results(result_part, size, tmpdir=None):
 def parse_args(x):
     parser = argparse.ArgumentParser(description='MMDet test detector')
     parser.add_argument('--config', default=x, help='test config file path')
-    parser.add_argument('--checkpoint', default="/media/glc/Elements/DATA/ALSOLO/Public-cityspace/01_AL/work_dirs/epoch_36.pth", help='checkpoint file')
-    parser.add_argument('--out', default="/media/glc/Elements/DATA/ALSOLO/Public-cityspace/02_AL/out/results_solov2_Public-cityspace_02_AL.pkl", help='output result file')
+    parser.add_argument('--checkpoint', default="../MyTrain/ModelEval/Public-cityspace/01_AL/work_dirs/epoch_36.pth", help='checkpoint file')
+    parser.add_argument('--out', default="../MyTrain/ModelEval/Public-cityspace/02_AL/out/results_solov2_Public-cityspace_02_AL.pkl", help='output result file')
     parser.add_argument(
         '--json_out',
         help='output result file name without extension',
@@ -258,11 +258,11 @@ def main(x):
 
 
 if __name__ == '__main__':
-    base_path = '/media/glc/Elements/project/SOLO/MyTrain/ALSOLO/Public-cityspace/'
+    base_path = '../MyTrain/ModelEval/Public-cityspace/'
     for idx, i in enumerate(os.listdir(base_path)):
         success = [59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84]
         if idx in success:
             num = idx + 1
 
-            x = '/media/glc/Elements/project/SOLO/MyTrain/ALSOLO/Public-cityspace/0{}_AL/solov2_Public_cityspace_0{}_AL.py'.format(num, num)
+            x = '../MyTrain/ModelEval/Public-cityspace/0{}_AL/solov2_Public_cityspace_0{}_AL.py'.format(num, num)
             main(x)
